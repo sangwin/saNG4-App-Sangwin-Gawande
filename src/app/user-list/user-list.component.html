@@ -1,0 +1,35 @@
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
+
+<div class="w3-container">
+	<h3></h3>
+	 <div class="w3-panel w3-round-small w3-teal">
+    <h3>Users List <button routerLink="/add" class="w3-button w3-green" style="float: right;font-size: 15px;">Add New User</button></h3>
+  </div>
+
+	<div class="w3-panel w3-light-grey w3-padding-16 w3-card-2">
+	<table class="w3-table w3-striped w3-bordered" *ngIf="userListData">
+			<tr>
+				<th>Sr. No.</th>
+				<!-- <th>ID</th> -->
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+			<tr *ngFor="let user of userListData; index as i;" appUserhover>
+				<td>{{i +1}}</td>
+				<!-- <td>{{user.id}}</td> -->
+				<td>{{user.firstname}} <span class="w3-badge w3-green" *ngIf="!isUser(user)">You</span></td>
+				<td>{{user.lastname}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.phone | phone}}</td>
+				<td><button  [routerLink]="['update', user.id]" class="w3-button w3-blue">Update</button></td>
+				<td><button (click)="deleteUser(user.id);" *ngIf="isUser(user)" class="w3-button w3-red">Delete</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->

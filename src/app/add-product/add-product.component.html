@@ -1,0 +1,27 @@
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
+<div class="w3-container" *ngIf="productForm">
+	<form class="w3-container" [formGroup]="productForm" (ngSubmit)="addProduct()">
+		<div class="w3-panel w3-green">
+			<p>Product Details</p>
+		</div> 
+
+		<label class="w3-text-blue"><b>Name</b></label>
+		<input class="w3-input w3-border" type="text" formControlName="name">
+		<div class="w3-panel w3-red"  *ngIf="productForm.controls.name.invalid && (productForm.controls.name.dirty || productForm.controls.name.touched)">Please enter 3 to 50 characters</div> 
+
+		<label class="w3-text-blue"><b>Price</b></label>
+		<input class="w3-input w3-border" type="number" formControlName="price">
+		<div class="w3-panel w3-red"  *ngIf="productForm.controls.price.invalid && (productForm.controls.price.dirty || productForm.controls.price.touched)">Please enter valid price</div> 
+
+		<label class="w3-text-blue"><b>Quantity</b></label>
+		<input class="w3-input w3-border" type="number" formControlName="quantity">
+		<div class="w3-panel w3-red"  *ngIf="productForm.controls.quantity.invalid && (productForm.controls.quantity.dirty || productForm.controls.quantity.touched)">Please enter valid quantity number</div> 
+
+		<p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+		
+		<br>
+		<button class="w3-btn w3-blue" type="submit" [disabled]="!productForm.valid">I'm Done</button>
+
+	</form>
+</div>
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->

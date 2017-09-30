@@ -1,0 +1,22 @@
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
+
+<div class="w3-container">
+	<form class="w3-container" [formGroup]="loginForm" (ngSubmit)="doLogin()">
+		<div class="w3-panel w3-green">
+			<p>Login</p>
+		</div> 
+
+		<label class="w3-text-blue"><b>Email</b></label>
+		<input class="w3-input w3-border" type="email" formControlName="email">
+		<div class="w3-panel w3-red"  *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">Please enter valid email address</div> 
+
+		<label class="w3-text-blue"><b>Password</b></label>
+		<input class="w3-input w3-border" type="password" formControlName="password">
+		<div class="w3-panel w3-red"  *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">Password must be at least 6 characters long, and contain a number</div> 
+		<br>
+		<button class="w3-btn w3-blue" type="submit" [disabled]="!loginForm.valid">Login</button>
+
+	</form>
+</div>
+
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
