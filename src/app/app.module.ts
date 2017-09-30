@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms'; 
+import { AutoCompleteModule } from 'primeng/primeng';
 
 // Services
 import { UserService } from './user.service';
@@ -54,25 +55,26 @@ const routes : Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent,
-    UserListComponent,
-    UserAddUpdateComponent,
-    PhonePipe,
-    UserhoverDirective,
-    ProductListComponent,
-    AddProductComponent,
-    CategoryListComponent,
-    AddCategoryComponent
+  AppComponent,
+  HomeComponent,
+  LoginComponent,
+  UserListComponent,
+  UserAddUpdateComponent,
+  PhonePipe,
+  UserhoverDirective,
+  ProductListComponent,
+  AddProductComponent,
+  CategoryListComponent,
+  AddCategoryComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    RouterModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-  RouterModule.forRoot(routes)
+  BrowserModule,
+  FormsModule,
+  RouterModule,
+  ReactiveFormsModule,
+  HttpClientModule,
+  RouterModule.forRoot(routes),
+  AutoCompleteModule
   ],
   providers: [AuthService,UserService,CategoryService,ProductsService],
   bootstrap: [AppComponent]

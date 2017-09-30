@@ -6,7 +6,6 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import { RouterModule, Routes ,Router,ActivatedRoute} from '@angular/router';
 import { ValidationService } from '../config.service';
 import { UserService } from '../user.service';
-import {AutoCompleteModule} from 'primeng/primeng';
 
 @Component({
   selector: 'app-add-product',
@@ -43,7 +42,7 @@ export class AddProductComponent implements OnInit {
 
     search(event) {
         // this.mylookupservice.getResults(event.query).then(data => {
-        //     this.results = data;
+            this.results = ['sangwin','sami'];
         // });
     }
     

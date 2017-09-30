@@ -17,7 +17,7 @@
 		<input class="w3-input w3-border" type="number" formControlName="quantity">
 		<div class="w3-panel w3-red"  *ngIf="productForm.controls.quantity.invalid && (productForm.controls.quantity.dirty || productForm.controls.quantity.touched)">Please enter valid quantity number</div> 
 
-		<p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+		<!-- <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete> -->
 		
 		<br>
 		<button class="w3-btn w3-blue" type="submit" [disabled]="!productForm.valid">I'm Done</button>
